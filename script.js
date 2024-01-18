@@ -18,12 +18,18 @@ function buyGrandma(num) {
     }
 }
 
+// RESETS BY DELETING EVERYTHING IN THE LOCALSTORAGE
+
 const resetBtn = document.getElementById('resetBtn')
 
 resetBtn.addEventListener('click', function() {
-    console.log('Reset Counter')
     cookies = 0
-    localStorage.removeItem('Cookies')
+    grandmaCounter = 0
+    ovenCounter = 0
+    farmCounter = 0
+    mineCounter = 0
+    bankCounter = 0
+    localStorage.clear()
 })
 
 // COOKIE BUTTON WHICH ADDS 1 EVERY TIME CLICKED
@@ -42,10 +48,11 @@ let grandmaOwn = document.getElementById('grandmaOwn')
 let grandmaCounter = 0
 
 grandmaBtn.addEventListener('click', function(event) {
-    if (cookies >= 5) {
-        cookies = cookies - 5
+    if (cookies >= 100) {
+        cookies = cookies - 100
         grandmaCounter = grandmaCounter + 1
         grandmaOwn.textContent = grandmaCounter
+        localStorage.setItem('Grandma', grandmaCounter)
         setInterval(function () {
             cookies = cookies + 1;
             console.log("👵", cookies)
@@ -61,10 +68,11 @@ let ovenOwn = document.getElementById('ovenOwn')
 let ovenCounter = 0
 
 ovenBtn.addEventListener('click', function() {
-    if (cookies >= 10) {
-        cookies = cookies - 10
+    if (cookies >= 250) {
+        cookies = cookies - 250
         ovenCounter = ovenCounter + 1
         ovenOwn.textContent = ovenCounter
+        localStorage.setItem('Oven', ovenCounter)
         setInterval(function () {
             cookies = cookies + 5;
             console.log("🔥", cookies)
@@ -80,10 +88,11 @@ let farmOwn = document.getElementById('farmOwn')
 let farmCounter = 0
 
 farmBtn.addEventListener('click', function() {
-    if (cookies >= 20) {
-        cookies = cookies - 20
+    if (cookies >= 1000) {
+        cookies = cookies - 1000
         farmCounter = farmCounter + 1
         farmOwn.textContent = farmCounter
+        localStorage.setItem('Farm', farmCounter)
         setInterval(function () {
             cookies = cookies + 10;
             console.log("🌽", cookies)
@@ -99,10 +108,11 @@ let mineOwn = document.getElementById('mineOwn')
 let mineCounter = 0
 
 mineBtn.addEventListener('click', function() {
-    if (cookies >= 50) {
-        cookies = cookies - 50
+    if (cookies >= 2500) {
+        cookies = cookies - 2500
         mineCounter = mineCounter + 1
         mineOwn.textContent = mineCounter
+        localStorage.setItem('Mine', mineCounter)
         setInterval(function () {
             cookies = cookies + 20;
             console.log("⛏️", cookies)
@@ -118,11 +128,13 @@ let bankOwn = document.getElementById('bankOwn')
 let bankCounter = 0
 
 bankBtn.addEventListener('click', function() {
-    if (cookies >= 100) {
-        cookies = cookies - 100
+    if (cookies >= 5000) {
+        cookies = cookies - 5000
         bankCounter = bankCounter + 1
         bankOwn.textContent = bankCounter
+        localStorage.setItem('Bank', bankCounter)
         setInterval(function () {
+            
             cookies = cookies + 50;
             console.log("🏦", cookies)
             counter.textContent = cookies
@@ -130,11 +142,22 @@ bankBtn.addEventListener('click', function() {
     }
 })
 
-// LOADS COOKIES FROM PREVIOUS SESSION
+// LOADS LOCALSTORAGE DATA FROM PREVIOUS SESSION
 
 function loadCookie() {
     const localCookie = localStorage.getItem('Cookies')
+    const localGrandma = localStorage.getItem('Grandma')
+    const localOven = localStorage.getItem('Oven')
+    const localFarm = localStorage.getItem('Farm')
+    const localMine = localStorage.getItem('Mine')
+    const localBank = localStorage.getItem('Bank')
     cookies = localCookie * 1
+    grandmaCounter = localGrandma * 1
+    ovenCounter = localOven * 1
+    farmCounter = localFarm * 1
+    mineCounter = localMine * 1
+    bankCounter = localBank * 1
+    
 }
 
 loadCookie()
