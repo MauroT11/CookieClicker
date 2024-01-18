@@ -5,9 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="./script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <title>Cookie Clicker</title>
 </head>
 <body>
-    <h1>Cookie Clicker</h1>
+    <header>
+       <h1>Cookie Clicker</h1>
+       <button id="resetBtn">Reset</button> 
+    </header>
+    <main>
+        <p>Cookies:</p>
+        <h1 id="counter">0</h1>
+        <div id="upgradesDiv">
+            <div class="upgradesHeader">
+                <p>Name</p>
+                <p>Cost</p>
+                <p>Cookies per second</p>
+                <p>Own</p>
+                <p>Buy</p>
+            </div>
+            <div class="upgrades">
+                <p>Grandma</p>
+                <p>50</p>
+                <p>1</p>
+                <p>0</p>
+                <button class="buyBtn" id="grandmaBtn">Buy</button>
+            </div>
+            <div class="upgrades">
+                <p>Oven</p>
+                <p>100</p>
+                <p>5</p>
+                <p>0</p>
+                <button class="buyBtn">Buy</button>
+            </div>
+            <div class="upgrades">
+                <p>Farm</p>
+                <p>500</p>
+                <p>10</p>
+                <p>0</p>
+                <button class="buyBtn">Buy</button>
+            </div>
+        </div>
+    </main>
+    
 </body>
 </html>
