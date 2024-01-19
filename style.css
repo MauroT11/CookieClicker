@@ -25,6 +25,7 @@ header h1 {
     font-family: Lobster, sans-serif;
     grid-column-start: 2;
     grid-column-end: 3;
+    color: white;
 }
 
 #cookieBtn{
@@ -80,7 +81,7 @@ main {
 }
 
 #upgradesDiv {
-    background-color: darkgray;
+    background-color: rgb(186, 210, 234);
     display: flex;
     flex-direction: column;
     width: 60%;
@@ -98,7 +99,7 @@ main {
 }
 
 .upgrades {
-    border-bottom: rgb(211, 211, 211) solid 2px;
+    border-bottom: rgb(137, 137, 137) solid 2px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     justify-items: center;
@@ -130,7 +131,7 @@ main {
 footer {
     background-color: slategrey;
     margin-top: 1rem;
-    height: 2.8rem;
+    height: 2.5rem;
     display: flex;
     align-items: center;
     flex-direction: column;
