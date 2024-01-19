@@ -18,18 +18,20 @@ function buyGrandma(num) {
     }
 }
 
-// RESETS BY DELETING EVERYTHING IN THE LOCALSTORAGE
+// RESETS BY DELETING EVERYTHING IN THE LOCALSTORAGE & RELOADS THE PAGE TO RESET THE UPGRADE BECAUSE THE UPGRADES WOULD STILL BE ACTIVE
 
 const resetBtn = document.getElementById('resetBtn')
 
 resetBtn.addEventListener('click', function() {
-    cookies = 0
-    grandmaCounter = 0
-    ovenCounter = 0
-    farmCounter = 0
-    mineCounter = 0
-    bankCounter = 0
-    localStorage.clear()
+    if (confirm('Are you sure you want to reset?\nYou will lose all your progress!')) {
+        cookies = 0
+        localStorage.clear()
+        location.reload()
+        console.log('RESET')
+    } else {
+        console.log('RESET CANCELLED')
+    }
+    
 })
 
 // COOKIE BUTTON WHICH ADDS 1 EVERY TIME CLICKED
