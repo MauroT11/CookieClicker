@@ -92,10 +92,12 @@ main {
 .upgradesHeader{
     border-bottom: rgb(0, 0, 0) solid 2px;
     display: grid;
+    align-items: center;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     justify-items: center;
     font-size: 1.25rem;
     font-weight: bold;
+    text-align: center;
 }
 
 .upgrades {
@@ -145,4 +147,59 @@ footer h3 {
 
 footer p {
     margin: 0;
+}
+
+@media (max-width: 1024px) {
+    header {
+        grid-template-columns: 0.5fr 2fr 0.5fr;
+        height: 20%;
+    }
+    header h1 {
+        font-size: 4.5rem;
+    }
+    #counter {
+        font-size: 5rem;
+    }
+    #cookieImg {
+        width: 10rem;
+        height: 10rem;
+    }
+    #resetBtn {
+        width: 70%;
+        font-size: 2rem;
+    }
+    main {
+        margin: 0;
+        height: 60%;
+    }
+    main p {
+        font-size: 2rem;
+    }
+    #upgradesDiv {
+        width: 90%;
+        font-size: 2rem;
+    }
+    .upgradesHeader{
+        grid-template-columns: 1fr 0.5fr 0.5fr 0.5fr 0.5fr;
+        font-size: 2rem;
+    }
+    .upgradesHeader p {
+        margin: 0;
+    }
+    .upgrades {
+        grid-template-columns: 1fr 0.5fr 0.5fr 0.5fr 0.5fr;
+        font-size: 1.9rem;
+    }
+    .upgradesLast {
+        grid-template-columns: 1fr 0.5fr 0.5fr 0.5fr 0.5fr;
+    }
+    .buyBtn {
+        width: 60%;
+        font-size: 1.5rem;
+    }
+    footer {
+        height: 20%;
+        font-size: 2rem;
+        margin-top: 3.5rem;
+    }
 }

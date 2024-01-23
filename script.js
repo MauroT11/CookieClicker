@@ -26,7 +26,6 @@ resetBtn.addEventListener('click', function() {
     if (confirm('Are you sure you want to reset?\nYou will lose all your progress!')) {
         cookies = 0
         localStorage.clear()
-        location.reload()
         console.log('RESET')
     } else {
         console.log('RESET CANCELLED')
@@ -83,18 +82,18 @@ ovenBtn.addEventListener('click', function() {
     }
 })
 
-// FARM UPGRADE ACTIVATION
+// FACTORY UPGRADE ACTIVATION
 
-const farmBtn = document.getElementById('farmBtn')
-let farmOwn = document.getElementById('farmOwn')
-let farmCounter = 0
+const factoryBtn = document.getElementById('factoryBtn')
+let factoryOwn = document.getElementById('factoryOwn')
+let factoryCounter = 0
 
-farmBtn.addEventListener('click', function() {
+factoryBtn.addEventListener('click', function() {
     if (cookies >= 1000) {
         cookies = cookies - 1000
-        farmCounter = farmCounter + 1
-        farmOwn.textContent = farmCounter
-        localStorage.setItem('Farm', farmCounter)
+        factoryCounter = factoryCounter + 1
+        factoryOwn.textContent = factoryCounter
+        localStorage.setItem('Factory', factoryCounter)
         setInterval(function () {
             cookies = cookies + 10;
             console.log("🌽", cookies)
@@ -154,12 +153,12 @@ function loadCookie() {
     const localMine = localStorage.getItem('Mine')
     const localBank = localStorage.getItem('Bank')
     cookies = localCookie * 1
+    console.log(cookies)
     grandmaCounter = localGrandma * 1
     ovenCounter = localOven * 1
-    farmCounter = localFarm * 1
+    factoryCounter = localFarm * 1
     mineCounter = localMine * 1
     bankCounter = localBank * 1
-    
 }
 
 loadCookie()
